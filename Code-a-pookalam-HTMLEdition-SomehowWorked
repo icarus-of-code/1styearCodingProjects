@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pookalam</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #1a0f00;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Outer Container */
+    .pookalam-canvas {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 0 0 50px rgba(255, 165, 0, 0.3);
+    }
+
+    /* Common Circle Styles */
+    .layer {
+      position: absolute;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Base Outer Ring - Dark Red */
+    .layer-1 {
+      width: 500px;
+      height: 500px;
+      background: #800000;
+    }
+
+    /* Layer 2 - Marigold Yellow Outer Ring */
+    .layer-2 {
+      width: 470px;
+      height: 470px;
+      background: #FFD700;
+    }
+
+    /* Layer 3 - Orange Petal Star Burst */
+    .layer-3 {
+      width: 440px;
+      height: 440px;
+      background: #FF8C00;
+      clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+        50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+      );
+    }
+
+    /* Layer 4 - Deep Violet Circle */
+    .layer-4 {
+      width: 380px;
+      height: 380px;
+      background: #4B0082;
+    }
+
+    /* Layer 5 - White Floral Star */
+    .layer-5 {
+      width: 320px;
+      height: 320px;
+      background: #FFFFFF;
+      clip-path: polygon(
+        50% 0%, 65% 25%, 100% 50%, 65% 75%, 
+        50% 100%, 35% 75%, 0% 50%, 35% 25%
+      );
+      transform: rotate(22.5deg);
+    }
+
+    /* Layer 6 - Red Petal Overlay */
+    .layer-6 {
+      width: 250px;
+      height: 250px;
+      background: #DC143C;
+      clip-path: polygon(
+        50% 0%, 65% 25%, 100% 50%, 65% 75%, 
+        50% 100%, 35% 75%, 0% 50%, 35% 25%
+      );
+    }
+
+    /* Layer 7 - Bright Yellow Center Ring */
+    .layer-7 {
+      width: 160px;
+      height: 160px;
+      background: #FFEE00;
+    }
+
+    /* Layer 8 - Center Flower Core (Thumba Poo) */
+    .center-flower {
+      width: 80px;
+      height: 80px;
+      background: #FFFFFF;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: inset 0 0 10px #FF8C00;
+    }
+
+    .center-dot {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: #D2691E;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Concentric Decorative Ring Dots */
+    .dots-container {
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      border-radius: 50%;
+    }
+
+    .dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #800000;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+    }
+
+    /* Position 8 dots around the ring */
+    .dot:nth-child(1) { transform: rotate(0deg) translate(220px) rotate(0deg); }
+    .dot:nth-child(2) { transform: rotate(45deg) translate(220px) rotate(-45deg); }
+    .dot:nth-child(3) { transform: rotate(90deg) translate(220px) rotate(-90deg); }
+    .dot:nth-child(4) { transform: rotate(135deg) translate(220px) rotate(-135deg); }
+    .dot:nth-child(5) { transform: rotate(180deg) translate(220px) rotate(-180deg); }
+    .dot:nth-child(6) { transform: rotate(225deg) translate(220px) rotate(-225deg); }
+    .dot:nth-child(7) { transform: rotate(270deg) translate(220px) rotate(-270deg); }
+    .dot:nth-child(8) { transform: rotate(315deg) translate(220px) rotate(-315deg); }
+  </style>
+</head>
+<body>
+
+  <div class="pookalam-canvas">
+    <!-- Outer Maroon Base -->
+    <div class="layer layer-1"></div>
+    
+    <!-- Outer Yellow Ring -->
+    <div class="layer layer-2"></div>
+
+    <!-- Outer Decorative Dots -->
+    <div class="dots-container">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <!-- Orange Star Petals Layer -->
+    <div class="layer layer-3"></div>
+
+    <!-- Purple Ring -->
+    <div class="layer layer-4"></div>
+
+    <!-- White Star Petals -->
+    <div class="layer layer-5"></div>
+
+    <!-- Crimson Star Petals -->
+    <div class="layer layer-6"></div>
+
+    <!-- Yellow Core Circle -->
+    <div class="layer layer-7"></div>
+
+    <!-- Center Thumba Flower -->
+    <div class="layer center-flower">
+      <div class="center-dot"></div>
+    </div>
+  </div>
+
+</body>
+</html>
